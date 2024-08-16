@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Idade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ecc6f0;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #102648;
+        }
+        p {
+            font-size: 1.2em;
+            color: #555;
+            margin: 20px 0;
+        }
+        button {
+            background-color: #3e1b96;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #38004d;
+        }
+        @media (max-width: 600px) {
+            p {
+                font-size: 1em;
+            }
+            button {
+                width: 100%;
+                padding: 15px;
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Verificação de Idade</h1>
+        <p id="mensagem">Clique no botão para verificar sua idade.</p>
+        <button onclick="verificarIdade()">Verificar Idade</button>
+    </div>
+
+    <script>
+        function verificarIdade() {
+            // Solicita a idade do usuário
+            const idade = prompt("Qual é a sua idade?");
+            
+            // Converte a idade para número
+            const idadeNum = parseInt(idade, 10);
+            
+            // Obtém o elemento do parágrafo
+            const mensagemElement = document.getElementById('mensagem');
+            
+            // Verifica se a idade é um número válido
+            if (!isNaN(idadeNum)) {
+                // Determina a mensagem com base na idade
+                let mensagem = idadeNum < 18 ? 
+                    "Você é menor de idade." : 
+                    "Você é maior de idade.";
+                
+                // Atualiza o conteúdo do parágrafo
+                mensagemElement.innerText = mensagem;
+            } else {
+                // Mensagem de erro se a entrada não for um número
+                mensagemElement.innerText = "Por favor, insira uma idade válida.";
+            }
+        }
+    </script>
+</body>
+</html>

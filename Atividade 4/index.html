@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f7;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            font-size: 1.2em;
+            background-color: #f0e0f2;
+            border: 1px solid #cfa4cc;
+            border-radius: 4px;
+            margin: 5px 0;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Números</h1>
+        <ul id="lista"></ul>
+    </div>
+
+    <script>
+        // Obtém o elemento <ul> onde os itens serão adicionados
+        const listaElement = document.getElementById('lista');
+
+        // Loop para gerar números de 1 a 10
+        for (let i = 1; i <= 10; i++) {
+            // Adiciona o número ao console
+            console.log(i);
+            
+            // Cria um novo item de lista
+            const listItem = document.createElement('li');
+            listItem.textContent = i;
+            
+            // Adiciona o item de lista ao <ul>
+            listaElement.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
